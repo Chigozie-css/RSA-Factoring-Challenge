@@ -4,7 +4,8 @@ import sys
 def factorize(n):
     for a in range(2, n):
         if n % a == 0:
-            return a, n // a
+            b = n // a
+            return min(a,b), max(a, b)
     return None, None
 
 def main(filename):
@@ -19,7 +20,7 @@ def main(filename):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: factors <file>")
+        print("Usage: ./factor <file>")
         sys.exit(1)
 
     filename = sys.argv[1]
